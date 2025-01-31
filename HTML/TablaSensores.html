@@ -75,10 +75,11 @@
             text-align: center;
         }
 
-        .gauge-container {
+        .gauge-container, .btn-container {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 120px;
         }
 
         .gauge-chart {
@@ -87,9 +88,6 @@
         }
 
         .btn-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             gap: 10px;
         }
     </style>
@@ -124,21 +122,28 @@
     <main class="container my-5">
         <h2 class="text-center mb-4">Listado de Sensores</h2>
 
+        <!-- Botón para añadir sensores -->
+        <div class="text-end mb-3">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addSensorModal">
+                <i class="fa fa-plus"></i> Añadir Sensor
+            </button>
+        </div>
+
         <table class="table table-bordered text-center align-middle">
             <thead class="table-dark">
                 <tr>
-                    <th style="width: 10%;">ID</th>
-                    <th style="width: 25%;">Nombre</th>
-                    <th style="width: 25%;">Ubicación</th>
-                    <th style="width: 20%;">AQI</th>
-                    <th style="width: 20%;">Acciones</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Ubicación</th>
+                    <th>AQI</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Sensor CO2</td>
-                    <td>Aula 101</td>
+                    <td class="align-middle">1</td>
+                    <td class="align-middle">Sensor CO2</td>
+                    <td class="align-middle">Aula 101</td>
                     <td>
                         <div class="gauge-container">
                             <div id="gauge-1" class="gauge-chart"></div>
@@ -152,9 +157,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>Sensor PM2.5</td>
-                    <td>Aula 102</td>
+                    <td class="align-middle">2</td>
+                    <td class="align-middle">Sensor PM2.5</td>
+                    <td class="align-middle">Aula 102</td>
                     <td>
                         <div class="gauge-container">
                             <div id="gauge-2" class="gauge-chart"></div>
@@ -171,7 +176,7 @@
         </table>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Restaurado) -->
     <footer class="text-center py-4">
         <p>&copy; 2025 AmbiSense. Todos los derechos reservados.</p>
         <a href="AboutUs.html" class="footer-link">Sobre Nosotros</a>
@@ -203,9 +208,9 @@
                             lineStyle: {
                                 width: 10,
                                 color: [
-                                    [0.5, 'green'],
-                                    [0.8, 'yellow'],
-                                    [1, 'red']
+                                    [0.5, 'green'],  
+                                    [0.8, 'yellow'], 
+                                    [1, 'red']       
                                 ]
                             }
                         },
